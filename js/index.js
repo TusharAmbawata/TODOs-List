@@ -3,6 +3,13 @@ function update(){
     console.log("upadting...");
     tit = document.getElementById("title").value;
     disc = document.getElementById("disc").value;
+   if(tit === "" || disc === "")
+    {
+        alert("Please Enter The Value");
+    }
+    else
+    {
+
     if(localStorage.getItem("itemsJson") ==null){
         itemJsonArray = [];
         itemJsonArray.push([tit,disc]);
@@ -15,6 +22,7 @@ function update(){
         localStorage.setItem('itemsJson',JSON.stringify(itemJsonArray));
     }
     main();
+    }
 }
 function main(){
     if(localStorage.getItem("itemsJson")==null){
